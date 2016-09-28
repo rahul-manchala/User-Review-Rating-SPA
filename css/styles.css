@@ -1,0 +1,277 @@
+body{
+  font-family: "Helvetica Neue","HelveticaNeue-Thin","Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+.padding_none{padding: 0 !important;}
+.margin_top20{margin-top: 20px;}
+.margin_bottom40{margin-bottom: 40px !important;}
+
+.stp-reviews-container{
+  width: 85%;
+  margin: 0 auto;
+}
+
+.product_review_row{
+  padding: 15px 0px;
+  border-bottom: 1px solid #ccc;
+}
+
+.thankyoureview_heading_color{color: #999999;font-family: "Helvetica Neue","HelveticaNeue-Thin","Helvetica Neue",Helvetica,Arial,sans-serif; font-size: 30px;}
+
+.full_rating_star{font-size: 20px !important;}
+.star-rating .glyphicon-star-empty:before{font-size: 26px !important;}
+
+.reviewer{
+}
+
+.reviewer_name{
+  font-weight: bold;
+}
+.reviewer_type{
+  color: green;
+}
+.product_review_rating{
+  
+}
+.product_review_date{
+  color: #807A7A;
+}
+.product_review_title{
+}
+.product_review_details{
+    padding-top: 5px;
+}
+.pagination_inside{margin: 18px;}
+.sorting{margin: 20px;}
+
+
+.product_responses{
+  margin-top: 10px;
+}
+
+.glyphicon-ok{
+  color: green;
+}
+
+
+#divHeader{font-size: 2em;}
+.label-text{font-size: 0.8em;}
+.progressBar{width:100px;height:10px;background:#aaa;margin-top: 2px;}
+.progressBarInner{width:50px;height:10px;background:#CC7800;float:left;}
+.form-group{margin-bottom:0 !important;}
+#btnWriteRev{width:70%;color:#4D4D4D;background:#F0F0F0;line-height:30px;border: none;}
+.writeRevDiv{overflow:hidden;padding:5px;border:2px solid #E5E5E5;margin-top: 20px;margin: 0 auto; float: none !important;background: #F0F0F0;}
+.writeareview_external{border-top:1px solid #E5E5E5; padding: 30px;}
+.pagination{height: 60px; background: #F0F0F0;border-top:2px solid #E5E5E5;border-bottom:2px solid #E5E5E5;}
+textarea.form-control{height: 120px !important;}
+.reviewbutton{background: #E58700 !important; border: none !important;}
+.reviewbutton:hover{background: #CC7800!important;}
+.showmorebutton{margin: 0 auto; float:none!important;}
+.showmorebutton_margin{margin-left: 15%;margin-top: 50px;margin-bottom: 50px;}
+.allstarreviews{border-left: 2px solid #ccc;}
+
+/*.rating.readonly li.filled {
+  color: #666;
+}*/
+.animate-show {
+  line-height: 20px;
+  opacity: 1;
+  padding: 10px;
+  border: 1px solid black;
+  background: white;
+}
+
+.animate-show.ng-hide-add.ng-hide-add-active,
+.animate-show.ng-hide-remove.ng-hide-remove-active {
+  -webkit-transition: all linear 0.5s;
+  transition: all linear 0.5s;
+}
+
+.animate-show.ng-hide {
+  line-height: 0;
+  opacity: 0;
+  padding: 0 10px;
+}
+
+.col-sm-3, .col-sm-1, .col-sm-4 {padding: 0;}
+
+.star-rating {
+    height: 30px;
+    width: 150px;    
+    position: relative;
+}
+
+.termsofagreement{
+  padding-left: 0px !important;
+}
+
+.leftcomponentscontainer{
+  width: 32%;
+  float: left;
+}
+
+.full-star {
+    position: absolute;
+    z-index: 2;
+    height: 100%;
+    background-image: url('../images/star.png');
+    background-size: 147px 28px;
+    top: -2px;    
+}
+
+.full-star1{
+    position: absolute;
+    z-index: 2;
+    height: 100%;
+    width: 100%;
+    background-image: url('../images/star1.png');
+    background-size: 147px 28px;
+    top: -2px;    
+}
+
+.star-rating .glyphicon-star:before{
+ margin-left: 4px;
+  font-size: 25px;
+  color: #F0F0F0;
+}
+.writeareviewstar .glyphicon-star:before{
+  font-size: 25px;
+}
+
+.writeareviewstar .glyphicon-star-empty:before{
+  font-size: 25px;
+}
+
+.padding-0{padding: 0;}
+.font-size-18{font-size: 18px;}
+
+/* Product Review Stars */
+
+.visuallyhidden{
+  position: absolute !important; clip: rect(1px 1px 1px 1px); clip: rect(1px, 1px, 1px, 1px);
+}
+
+.product-review-stars label:after{
+    content: "★";
+    color: inherit;
+    -webkit-transform: scale(4);
+    positi: 4;
+    left: 0on: absolute;
+    z-indexpx;
+    transition: all .4s;
+    opacity: 0;
+    color: inherit;
+    visibility: hidden; 
+}
+
+.product-review-stars input:checked + label:after{
+    visibility: visible;
+    -webkit-transform: scale(1);
+    opacity: 1;
+}
+
+.product-review-stars  {
+  unicode-bidi: bidi-override;
+  direction: rtl;
+  width:  156px;
+}
+
+.product-review-stars label{
+    font-family: "icomoon";
+    font-size: 2em;
+    position: relative;
+    cursor: pointer;
+    color: #DFE3E4;
+}
+.product-review-stars input:checked ~ label:before{
+    opacity: 1;
+}
+.product-review-stars:hover input ~ label:before{
+    opacity: 0;
+}
+
+.product-review-stars input + label:before{
+    content: "\2605";
+    position: absolute;
+    right: 0;
+    opacity: 0;
+    transition: opacity .3s ease-in-out, color .3s ease-in-out;
+    backface-visibility:hidden;
+-webkit-backface-visibility:hidden; /* Chrome and Safari */
+-moz-backface-visibility:hidden; /* Firefox */
+-ms-backface-visibility:hidden; /* Internet Explorer */
+}
+.product-review-stars input + label:hover:before,
+.product-review-stars input + label:hover ~ label:before
+{
+    opacity: 1;
+}
+.reviewscolor{color: #008BD0;}
+
+.reviewbutton{
+  border-radius: 0;
+}
+
+.product-review-stars label:nth-of-type(5):hover:before{
+    color: #d35400 !important;
+}
+.reviewby_lable{margin-top: 20px;}
+
+.glyphicon-star:before{color: #CC7800; font-size: 15px;}
+.glyphicon-star-empty:before {color: #CCCCCC; font-size: 15px;}
+.write_a_review{padding-left: 0!important;padding-right: 0!important;}
+.writeareviewstar >i{font-size: 20px!important;}
+
+.pull-right-cross{
+  float: right;
+  padding: 10px;
+  top: -5px !important;
+  right: 0px;
+  background-color: #E4E4E4;
+  color: #666;
+}
+
+.error{
+  color: #666; 
+  border-top: 1px solid #cc0000; 
+  border-bottom: 1px solid #cc0000;
+  background-color: rgb(251, 243, 232);
+}
+/*.errorstar{display: none;}
+.errortitle{display: none;}
+.errordesc{display: none;}
+.errordisname{display: none;}*/
+/* Product Review Stars */
+
+.rating {
+    color: #CCCCCC;
+    margin: 0;
+    padding: 0;
+}
+ul.rating {
+    display: inline-block;
+}
+.rating li  {
+    list-style-type: none;
+    display: inline-block;
+    text-align: center;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.rating li span:before  {
+    content: '\e006';
+}
+.rating .filled {
+    color: #CC7800;
+}
+
+.glyphicon{
+  position: relative;
+  top: 1px;
+  display: inline-block;
+  font-family: 'Glyphicons Halflings';
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1;
+}

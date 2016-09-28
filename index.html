@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="reviews">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="author" content="">
+<link rel="icon" href="../../favicon.ico">
+<link rel="stylesheet" type="text/css" href="css/styles.css">
+<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="css/bootstrap-theme.min.css">
+<link rel="stylesheet" type="text/css" href="css/ui-grid.css">
+<link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,900' rel='stylesheet' type='text/css'>
+</head>
+<body>
+  <!--Opening container for all the reviews components-->
+  <div ng-app="reviews" ng-controller="RatingCtrl" class="stp-reviews-container">
+    <!-- Opening Container for Average Customer Reviews-->
+    <div class="container-fluid">
+      <!--Opening for Overall Reviews -->
+      <div class="container-fluid padding_none">
+        <div id="divHeader">CUSTOMER <b>Reviews</b></div>
+        <div class="col-sm-12 write_a_review"><b>Average Customer Review</b></div>
+        <!--Opening for all Overall LEFT Components -->
+        <div class="col-sm-5 write_a_review margin_top20">
+        <!--Opening Overall Star Rating and Reviews -->
+          <div class="col-sm-6 padding_none">
+            <div class="star-rating">
+              <!--<span class="glyphicon glyphicon-star-empty full_rating_star"></span>
+              <span class="glyphicon glyphicon-star-empty full_rating_star"></span>
+              <span class="glyphicon glyphicon-star-empty full_rating_star"></span>
+              <span class="glyphicon glyphicon-star-empty full_rating_star"></span>
+              <span class="glyphicon glyphicon-star-empty full_rating_star"></span>-->
+              <div class="full-star1" style=""></div>
+              <div class="full-star" style="width:{{overal_reviews.Overall_rating * 19.5}}%"></div>
+            </div>
+          </div>
+          <div class="col-sm-6 label-text padding-0 label-text write_a_review">
+            <label class="control-label font-size-18">{{overal_reviews.Overall_rating}}<span class="reviewscolor"> ({{overal_reviews.overall_reviews}})</span> </label>
+          </div>
+        <!--Closing Overall Star Rating and Reviews -->
+        <!--Opening for Write a Review Button and Reviews Vendor Label-->
+          <div class="col-sm-12 write_a_review margin_top20">
+            <input type='button'  id="btnWriteRev"  value="Write a Review" ng-click="writeareview_Show()"/>
+          </div>  
+          <div class="col-sm-12 write_a_review reviewby_lable">
+                <label>Reviews by</label>
+          </div>
+        <!--Opening for Write a Review Button and Reviews Vendor Label-->
+        </div>
+        <!--Closing for all Overall LEFT Components --> 
+        <!--Opening for all Overall RIGHT Components --> 
+        <div class="allstarreviews pull-left">
+          <!-- OPENING 5 STAR REVIEW COMPONENTS-->
+          <div class="form-group clearfix"> 
+            <div class="col-sm-5">
+              <span class="glyphicon glyphicon-star"></span>
+              <span class="glyphicon glyphicon-star"></span>
+              <span class="glyphicon glyphicon-star"></span>
+              <span class="glyphicon glyphicon-star"></span>
+              <span class="glyphicon glyphicon-star"></span> 
+            </div>
+            <div class="col-sm-1 label-text">
+              <label class="control-label reviewscolor">({{rat5}})</label>
+            </div>
+            <div class="col-sm-4">
+              <div class='progressBar'>
+                <div class='progressBarInner' style="width:{{pb5}}px;"></div>
+              </div>
+            </div>
+          </div>
+          <!-- CLOSING 5 STAR REVIEW COMPONENTS-->
+          <!-- OPENING 4 STAR REVIEW COMPONENTS-->
+          <div class="form-group clearfix"> 
+            <div class="col-sm-5">
+              <span class="glyphicon glyphicon-star"></span>
+              <span class="glyphicon glyphicon-star"></span>
+              <span class="glyphicon glyphicon-star"></span>
+              <span class="glyphicon glyphicon-star"></span>
+              <span class="glyphicon glyphicon-star-empty"></span>     
+            </div>
+            <div class="col-sm-1 label-text">
+              <label class="control-label reviewscolor">({{rat4}})</label>
+            </div>
+            <div class="col-sm-4">
+              <div class='progressBar'>
+                <div class='progressBarInner' style="width:{{pb4}}px;"></div>
+              </div>
+            </div>
+          </div>
+          <!-- CLOSING 4 STAR REVIEW COMPONENTS-->
+          <!-- OPENING 3 STAR REVIEW COMPONENTS-->
+          <div class="form-group clearfix"> 
+            <div class="col-sm-5">
+              <span class="glyphicon glyphicon-star"></span>
+              <span class="glyphicon glyphicon-star"></span>
+              <span class="glyphicon glyphicon-star"></span>
+              <span class="glyphicon glyphicon-star-empty"></span>
+              <span class="glyphicon glyphicon-star-empty"></span>
+            </div>
+            <div class="col-sm-1 label-text">
+              <label class="control-label reviewscolor">({{rat3}})</label>
+            </div>
+            <div class="col-sm-4">
+              <div class='progressBar'>
+                <div class='progressBarInner' style="width:{{pb3}}px;"></div>
+              </div>
+            </div>
+          </div>
+          <!-- CLOSING 3 STAR REVIEW COMPONENTS-->
+          <!-- OPENING 2 STAR REVIEW COMPONENTS-->
+          <div class="form-group clearfix"> 
+            <div class="col-sm-5">
+              <span class="glyphicon glyphicon-star"></span>
+              <span class="glyphicon glyphicon-star"></span>
+              <span class="glyphicon glyphicon-star-empty"></span>
+              <span class="glyphicon glyphicon-star-empty"></span>
+              <span class="glyphicon glyphicon-star-empty"></span>
+            </div>
+            <div class="col-sm-1 label-text">
+              <label class="control-label reviewscolor">({{rat2}})</label>
+            </div>
+            <div class="col-sm-4">
+              <div class='progressBar'>
+                <div class='progressBarInner' style="width:{{pb2}}px;"></div>
+              </div> 
+            </div>
+          </div>
+          <!-- CLOSING 2 STAR REVIEW COMPONENTS-->
+          <!-- OPENING 1 STAR REVIEW COMPONENTS-->
+          <div class="form-group clearfix"> 
+            <div class="col-sm-5">
+              <span class="glyphicon glyphicon-star"></span>
+              <span class="glyphicon glyphicon-star-empty"></span>
+              <span class="glyphicon glyphicon-star-empty"></span>
+              <span class="glyphicon glyphicon-star-empty"></span>
+              <span class="glyphicon glyphicon-star-empty"></span>
+            </div>
+            <div class="col-sm-1 label-text">
+              <label class="control-label reviewscolor">({{rat1}})</label>
+            </div>
+            <div class="col-sm-4">
+              <div class='progressBar'>
+                <div class='progressBarInner' style="width:{{pb1}}px;"></div>
+              </div>
+            </div>
+          </div>
+          <!-- CLOSING 1 STAR REVIEW COMPONENTS-->
+        </div>
+        <!--Closing for all Overall RIGHT Components -->
+
+        <!---Opening Write a Review Form-->
+        <div class="col-sm-12 writeareview_external" id="writeRevDiv" ng-hide="show" animate-me="animateToggle">
+          <div class="col-sm-10 clearfix writeRevDiv">
+              <div class="row">
+                <span ng-click="show = !show" class="glyphicon glyphicon-remove pull-right-cross" data-dismiss="#writeRevDiv"></span>
+              </div>
+              <div class="form-group"> 
+                <form name="reviewSubmitForm" ng-submit="submitUser()" novalidate>
+                    <div class="col-sm-12" id="divHeader">WRITE A <b>REVIEW</b></div>
+                    <div class="col-sm-12 margin_top20"><b>Rating: </b>(required)</div>
+                    <div class="col-sm-12 writeareviewstar">
+                      <rating ng-model="ratingWrite" on-hover="hoveringOver(value)" name="star" on-leave="overStar = null" ng-click="test = false" ></rating>
+                      <span class="col-sm-12 error errortitle" ng-show="test">This is required field. Please enter the requested information</span>
+                    </div>
+                    <div class="col-sm-12 margin_top20"><b>Rating Title: </b>(required)</div>
+                    <div class="col-sm-12">
+                      <input type="text" class="form-control" ng-class="{ errorinput: submitted && reviewSubmitForm.title.$invalid }" id="inputwarning" ng-model="review.title"  name="title" required id='reviewTitle' required>
+                      <span class="col-sm-12 error errortitle" ng-show="submitted && reviewSubmitForm.title.$invalid">This is required field. Please enter the requested information</span>
+                    </div>
+                    <div class="col-sm-12 margin_top20"><b> Review: </b>(required)</div>
+                    <div class="col-sm-12">
+                      <input class="form-control" ng-model="review.desc" ng-class="{ errorinput: submitted && reviewSubmitForm.desc.$invalid }"  name="desc" required id="desc" cols="20" rows="2" required >
+                      <span class="col-sm-12 error errortitle" ng-show="submitted && reviewSubmitForm.desc.$invalid">This is required field. Please enter the requested information</span>
+                    </div><br/>
+                    <div class="col-sm-12 margin_top20"><b> Display Name:</b> (required)</div>
+                    <div class="col-sm-6 ">
+                      <input class="form-control" ng-model="review.disName" ng-class="{ errorinput: submitted && reviewSubmitForm.disName.$invalid }"  name="disName" id='disName' required / >
+                      <span class="col-sm-12 error errortitle" ng-show="submitted && reviewSubmitForm.disName.$invalid">This is required field. Please enter the requested information</span>
+                    </div>
+                    <div class="col-sm-12">
+                      <div class="col-sm-6 clearfix margin_top20 termsofagreement">By clicking on SUBMIT you agree to the <a href="#">terms of use</a> </div>
+                      <div class="col-sm-6 text-right margin_top20">
+                        <button type='submit' class="reviewbutton btn" id="btnSubmit"/>Submit</button>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+          </div>
+        </div>
+        <!---Closing Write a Review Form-->
+        <!---Opening Thank you for Submit Form-->
+        <div class="col-sm-12 writeareview_external" id="writeRevDiv" ng-if="thankyou">
+          <div class="col-sm-10 clearfix writeRevDiv">
+            <div class="row">
+              <span ng-click="close_thankyou()" class="glyphicon glyphicon-remove pull-right-cross" data-dismiss="#writeRevDiv"></span>
+            </div>
+            <div class="form-group"> 
+              <div class="col-sm-12">
+                <div class="col-sm-12 thankyoureview_heading_color">Thanks for reviewing!</b></div>
+                <div class="col-sm-12 margin_bottom40">&nbsp; We really appreciate your review.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!---Closing Thank you for Submit Form-->
+      </div>
+      <!--Closing for Overall Reviews -->
+    </div>
+    <!-- Closing of Container for Average Customer Reviews-->
+
+    <!--Opening of Pagination Bar --> 
+    <div class="col-sm-12">
+      <div class="col-sm-12 pagination">
+        <div class="pull-left col-centered">
+          <span class="col-sm-12 pagination_inside" ><b>1-10</b> of 1901 reviews</span>
+        </div>
+        <div class="col-sm-2 pull-right">
+          <select class="col-sm-12 sorting">
+            <option>Sort by</option>
+            <option>Sort by</option>
+            <option>Sort by</option>
+            <option>Sort by</option>
+            <option>Sort by</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <!--End of Pagination bar --> 
+
+    <!--Beginning of User's Product Reviews--> 
+      <div class="product_review_rows col-sm-12" ng-repeat="review in reviews"  ng-if="$index < revLen" >
+        <div class="product_review_row">
+          <div class="reviewer">
+            <span class="reviewer_name">{{review.reviewer_name}}</span>
+              <span class="glyphicon glyphicon-ok"></span>
+              <span class="reviewer_type ">{{review.reviewer_type}}</span>
+              <span class="product_review_date"> | {{review.product_review_date}}</span>
+          </div>
+            <div star-rating rating-value="review.product_review_rating" max="max" ></div>
+            <h5 class="product_review_title">{{review.product_review_title}}</h5>
+            <div class="product_review_details">{{review.product_review_details}}</div>
+            <div class="product_responses">
+              <span class="">Was this review helpful? </span>
+              <span class="glyphicon glyphicon-thumbs-up"></span>
+              <span class="product_yes_count"><a href="#">Yes</a> ({{review.product_yes_count}})</span>
+              <span class="glyphicon glyphicon-thumbs-down"></span>
+              <span class="product_no_count"><a href="#"> No </a> ({{review.product_no_count}})</span>
+            </div>
+        </div>
+      </div>
+    <!--Closing of User's Product Reviews--> 
+
+    <!--Begin Show More Button-->
+      <div class="col-sm-12">
+        <div class="col-sm-6 showmorebutton">
+        <input  class="col-sm-3 showmorebutton showmorebutton_margin" type='button' id="btnWriteRev" value="SHOW MORE" ng-if='showMore'  ng-click="ShowMore()" /></div>
+      </div>
+    <!--Begin Show More Button-->   
+    </div>
+    <!-- Closing whole Container-->
+  <script src="controllers/js/jquery.js"></script>
+  <script src="controllers/js/jquery-ui.min.js"></script>
+  <script src="controllers/js/angular.js"></script>
+  <script src="controllers/js/angular-animate.js"></script>
+  <script src="controllers/js/angular-cookies.js"></script>
+  <script src="controllers/js/angular-resource.js"></script>
+  <script src="controllers/js/angular-route.js"></script>
+  <script src="controllers/js/angular-sanitize.js"></script>
+  <script src="controllers/js/angular-touch.js"></script>
+  <script src="controllers/js/ui-grid.js"></script>
+  <script src="controllers/js/bootstrap-slider.js"></script>
+  <script src="controllers/js/slider.js"></script>
+  <script src="controllers/js/modal.js"></script>
+  <script src="controllers/js/dialogs.min.js"></script>
+  <script src="controllers/js/bootstrap.js"></script>
+  <script src="controllers/js/ui-bootstrap.js"></script>
+  <script src="controllers/js/ui-bootstrap-tpls-0.12.0.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
